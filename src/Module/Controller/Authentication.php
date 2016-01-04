@@ -2,7 +2,7 @@
 /**
  * Verone CRM | http://www.veronecrm.com
  *
- * @copyright  Copyright (C) 2015 Adam Banaszkiewicz
+ * @copyright  Copyright (C) 2015 - 2016 Adam Banaszkiewicz
  * @license    GNU General Public License version 3; see license.txt
  */
 
@@ -15,6 +15,11 @@ class Authentication extends BaseController
 {
     public function loginFormAction($request)
     {
+        if($request->get('check-registration'))
+        {
+            return $this->response((integer) $this->get('registration')->isRegistered());
+        }
+
         if($request->isAJAX())
         {
             return $this->responseAJAX([

@@ -73,6 +73,6 @@
         });
     </script>
     <?=$app->assetter()->all('body')?>
-    <script>createBackgroundSlider('{{ asset('/') }}');</script>
+    <script>createBackgroundSlider();</script>
 </body>
 </html>

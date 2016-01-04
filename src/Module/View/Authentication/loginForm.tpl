@@ -104,8 +104,14 @@
                 }
             });
         });
+
+        $.ajax({
+            path: '{{ asset('/') }}',
+            type: 'GET',
+            data: { 'check-registration': '1' }
+        });
     </script>
     <?=$app->assetter()->all('body')?>
-    <script>createBackgroundSlider('{{ asset('/') }}');</script>
+    <script>createBackgroundSlider();</script>
 </body>
 </html>
